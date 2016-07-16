@@ -2,6 +2,8 @@ description '基础'
 
 apply plugin: 'java'
 
-dependencies {
+dependencies{
+
+    testCompile 'junit:junit:4.12'
 
 }

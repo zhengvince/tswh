@@ -6,9 +6,8 @@ out
 build
 classes
 logs
+log
 .gradle
-*.log
 gradlew
 gradlew.bat
 gradle
-log
