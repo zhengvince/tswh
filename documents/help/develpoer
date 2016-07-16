@@ -1,0 +1,14 @@
+1.数据库设计的一般性原则
+
+    1.1 主键的列名统一为id。
+    1.2 为方便数据操作及维护，不建立任何外键，用程序去保证关联关系。
+    1.3 为表名添加前缀以便日后管理。比如有几十个表，将联系比较紧密的表，使用相同的前缀。
+    1.4 表名全小写，因为MySQL在Linux下默认区分表名大小写。
+
+
+2.事务 Transactions设计原则
+
+    在SpringSide里，事务坐在Service层，而且因为Service层的方法里，只读的事务居多，
+    因此在Class Level上默认设置@Transactional(readOnly = true)
+    ，而在save，delete方法再注释@Transactional(readOnly = false)。
+

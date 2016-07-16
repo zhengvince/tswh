@@ -1,0 +1,50 @@
+/**
+ * 所有模块公用部分
+ */
+allprojects {
+
+    /*版本信息*/
+    group 'vince'
+    version '1.0-SNAPSHOT'
+    description '基础架构'
+
+    /*gradle插件*/
+    apply plugin: 'java'
+    apply plugin: 'idea'
+
+    /*java版本*/
+    sourceCompatibility = 1.8
+    targetCompatibility = 1.8
+
+    /*依赖仓库*/
+    repositories {
+        mavenLocal()
+        maven { url "http://repo1.maven.org/maven2" }
+    }
+
+    /*配置插件依赖*/
+    buildscript {
+        /*插件仓库*/
+        repositories {
+            mavenLocal()
+            maven { url "http://repo1.maven.org/maven2" }
+        }
+    }
+
+    /*统一编码为utf-8*/
+    [compileJava, compileTestJava]*.options*.encoding = 'UTF-8'
+
+
+    configurations {
+        //引入包里排除 commons-logging 和 SLF4j ，因为我们用 logback
+        all*.exclude group: "commons-logging", module: "commons-logging"
+        all*.exclude group: "org.slf4j", module: "slf4j-log4j12"
+    }
+}
+
+/*依赖*/
+dependencies {
+
+
+}
+

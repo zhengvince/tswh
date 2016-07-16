@@ -1,0 +1,7 @@
+description '基础'
+
+apply plugin: 'java'
+
+dependencies {
+
+}
